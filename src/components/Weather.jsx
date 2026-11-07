@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ---------- Animation variants ----------
 const cardVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: {
@@ -35,7 +34,6 @@ export default function Weather() {
                 <AnimatePresence mode="wait">
                     {weather.isLoaded ? (
                         <motion.div
-                            // key = l'card kat3awd l'animation mnin kat-tbeddel l'mdina
                             key={weather.name}
                             variants={cardVariants}
                             initial="hidden"

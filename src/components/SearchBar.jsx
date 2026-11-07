@@ -27,7 +27,6 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 160, damping: 18 } },
 };
 
-// ---------- MUI styling with Tailwind (arbitrary variants) ----------
 const textFieldClass = [
     '[&_.MuiOutlinedInput-root]:!rounded-2xl',
     '[&_.MuiOutlinedInput-root]:!bg-slate-50',
@@ -65,6 +64,7 @@ export default function SearchBar() {
     const [unity, setUnity] = useState('metric');
     const [geoLocation, setGeoLocation] = useState(undefined)
     const [isCurrentLocation, setIsCurrentLocation] = useState(false)
+
     const getGeoLocation = () => {
         return navigator.geolocation.getCurrentPosition((position) => {
             setIsCurrentLocation(true)
@@ -73,14 +73,12 @@ export default function SearchBar() {
                 lat: position.coords.latitude
             })
         }
-
         )
     }
+
     const hasGeoLocation = () => {
         return navigator.geolocation
     }
-
-
 
     useEffect(() => {
         getData()
@@ -94,7 +92,6 @@ export default function SearchBar() {
 
 
     const dispatch = useDispatch()
-
     const handleInputChange = async (e) => {
         const { value } = e.currentTarget;
         try {
@@ -157,7 +154,7 @@ export default function SearchBar() {
                             <TextField
                                 onChange={handleInputChange}
                                 {...params}
-                                label={'Enter City...'}
+                                label={'Enter City'}
                                 className={textFieldClass}
                             />
                         )}
