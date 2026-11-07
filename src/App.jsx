@@ -1,7 +1,14 @@
+import SearchBar from "./components/SearchBar.jsx"
+import Weather from "./components/Weather.jsx"
+import { Provider } from "react-redux"
+import { store } from "./app/store/index.js"
 function App() {
   return (
     <>
-      <h1>jhjhj</h1>
+      <Provider store={store}>  
+      <SearchBar/>
+      <Weather/>
+      </Provider>
     </>
   )
 }
