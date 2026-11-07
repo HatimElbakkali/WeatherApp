@@ -10,7 +10,11 @@ const initialState = {
         country: undefined,
     } ,
     weather: undefined,
-    wind: undefined
+    dt:undefined,
+    wind: {
+        speed: undefined
+    },
+    isLoaded: false
 };
 
 const WeatherSlice = createSlice({
@@ -18,11 +22,17 @@ const WeatherSlice = createSlice({
     initialState,
     reducers:{
         setData: (state, action) => {
-            // state = action.payload;
-            return action.payload;
+            return {
+                ...action.payload,
+                isLoaded: true,
+            };
+        },
+
+        resetData: (state) => {
+            state.isLoaded = false
         }
     }
 })
 
-export const {setData} = WeatherSlice.actions;
+export const {setData, resetData} = WeatherSlice.actions;
 export default WeatherSlice.reducer;
