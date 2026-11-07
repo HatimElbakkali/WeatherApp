@@ -19,6 +19,7 @@ A clean, animated weather app built with React. Search for any city with autocom
   <img src="https://skillicons.dev/icons?i=react,vite,js,html,css,tailwind" alt="Technologies used" />
 </p>
 **Animations:** Framer Motion (the only animation library used).
+**State management:** Redux Toolkit (react-redux).
 
 ## 🚀 Getting Started
 
